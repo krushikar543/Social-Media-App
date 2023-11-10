@@ -1,5 +1,7 @@
 import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
+
+// Blue print of the User Object
 const UserSchema = new mongoose.Schema({
     firstName: {
         type : String,

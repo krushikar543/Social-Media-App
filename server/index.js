@@ -20,6 +20,7 @@ import {users, posts} from "./data/index.js";
 
 // CONFIGURATIONS
 
+//Invoking all modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname =  path.dirname(__filename);
 dotenv.config();
@@ -35,6 +36,7 @@ app.use("/assets", express.static(path.join(__dirname, 'public/assets')));
 
 // FILE STORAGE
 
+// setting up the file storage location
 const storage = multer.diskStorage({
     destination: function (req, file, cb){
         cb(null, "public/assets");
@@ -58,17 +60,17 @@ app.use("/posts", postRoutes);
 
 // MONGOSE SETUP
 
-const PORT  = process.env.PORT || 6001;
+const PORT  = process.env.PORT || 6001; // connection with MongoDb on this port.
 mongoose.connect(process.env.MONGO_URL, {
     ssl : true,
     tls : true,
 })
 .then(() =>{
-    app.listen(PORT, () => console.log(`Server Port : ${PORT}`));
+    app.listen(PORT, () => console.log(`Server Port : ${PORT}`)); // Implies if connection is successful
 
     // Initial Data
 
     // User.insertMany(users);
     // Post.insertmany(posts);
-}).catch((error) => console.log(`${error} \n Did not connect`));
+}).catch((error) => console.log(`${error} \n Did not connect`)); // catches for any error
 

@@ -1,4 +1,8 @@
 import jwt from "jsonwebtoken"
+
+// middleware function used for verification (here). Authorization done. Only Authorized user will 
+// be able to perform certain actions such as list out friends list, add new friends, post images etc...
+
 export const verifytoken = async (req, res, next) => {
     try {
         let token = req.header("Authorization");

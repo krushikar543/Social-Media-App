@@ -1,6 +1,7 @@
-import posts from "../models/Post.js";
+import Post from "../models/Post.js";
 import User from "../models/User.js";
 
+// function defination for all post operations
 export const createPost = async (req, res) => {
     try{
         const {userId, description, picturePath} = req.body;

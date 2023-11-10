@@ -6,6 +6,8 @@ import {
 } from "../controllers/users.js";
 import {verifytoken} from "../middleware/auth.js";
 
+// endpoints for users
+
 const router = express.Router();
 
 // READ

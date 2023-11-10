@@ -1,6 +1,9 @@
 import User from "../models/User.js";
 
 // READ
+
+// function definations for all user operations : list out all users, get user friends, add / remove friends
+
 export const getUser = async(req, res) => {
     try{
         const {id} = req.params;

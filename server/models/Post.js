@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Blue print of a Post Object
 const postSchema = mongoose.Schema(
     {
         userId: {
