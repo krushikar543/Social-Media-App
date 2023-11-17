@@ -14,7 +14,7 @@ const SinglePostWidget = ({
     const token = useSelector((state) => state.token);
     const {palette} = useTheme();
     const [isComments, setIsComments] = useState(false);
-    const LoggedInUserId = useSelector((state) => state.user_id);
+    const LoggedInUserId = useSelector((state) => state.user._id);
     const isLiked = Boolean(likes[LoggedInUserId]);
     const likeCount = Object.keys(likes).length;
 
@@ -42,7 +42,7 @@ const SinglePostWidget = ({
             )}
             <FlexBetween mt="0.25rem">
                 <FlexBetween gap="1rem">
-                    <FlexBetween gap="0,3rem">
+                    <FlexBetween gap="0.3rem">
                         <IconButton onClick={patchLike}>
                             {isLiked ? (
                                 <FavoriteOutlined sx ={{color:primary}} />
@@ -76,6 +76,6 @@ const SinglePostWidget = ({
                 </Box>
             )}
         </WidgetWrapper>
-    )
-}
+    );
+};
 export default SinglePostWidget;

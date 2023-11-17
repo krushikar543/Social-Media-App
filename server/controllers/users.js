@@ -34,7 +34,7 @@ export const getUserFriends = async(req, res) => {
 
 export const addRemoveFriend = async(req, res) => {
     try{
-        const {id} = req.params;
+        const {id, friendId} = req.params;
         const user  = await User.findById(id);
         const friend = await User.findById(friendId);
         if(user.friends.includes(friendId)){
@@ -59,4 +59,4 @@ export const addRemoveFriend = async(req, res) => {
     }catch(err){
         res.status(500).json({message : err.message});
     }
-}
+};

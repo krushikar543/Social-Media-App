@@ -3,7 +3,7 @@ import HomePage from "display/homePage";
 import LoginPage from "display/loginPage";
 import ProfilePage from "display/profilePage";
 import { useMemo } from "react";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import {themeSettings} from "./theme";
