@@ -5,9 +5,9 @@ import {
     likePost, 
 } from "../controllers/posts.js";
 
-// End points for all posts
-
 import { verifytoken } from "../middleware/auth.js";
+
+// End points for all posts
 
 const router = express.Router();
 

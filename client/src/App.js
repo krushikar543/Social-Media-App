@@ -15,12 +15,12 @@ function App() {
   return (
     <div className="app">
       <BrowserRouter>
-        <ThemeProvider theme = { theme}>
+        <ThemeProvider theme = {theme}>
           <CssBaseline />
           <Routes>
             <Route path="/" element = {<LoginPage />} />
             <Route path="/home" element = {isAuth ? <HomePage /> : <Navigate to="/" />} />
-            <Route path="/profile/:id" element = {isAuth ? <ProfilePage /> : <Navigate to="/" />} />
+            <Route path="/profile/:userId" element = {isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

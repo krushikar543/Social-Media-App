@@ -19,7 +19,7 @@ const registerSchema = yup.object().shape({
     password: yup.string().required("required"),
     location: yup.string().required("required"),
     occupation: yup.string().required("required"),
-    picturePath: yup.string().required("required"),
+    picture: yup.string().required("required"),
 }) 
 
 const loginSchema = yup.object().shape({
@@ -34,7 +34,7 @@ const initialRegisterValue = {
     password : "",
     location : "",
     occupation : "",
-    picturePath : "",
+    picture : "",
 };
 const initialLoginValue = {
     email : "",
@@ -42,7 +42,7 @@ const initialLoginValue = {
 };
 
 const Form = () => {
-    const [pageType, setPageType] = useState("register");
+    const [pageType, setPageType] = useState("login");
     const {palette} = useTheme();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Form = () => {
         for(let value in values){
             formData.append(value, values[value])
         }
-        formData.append('picturePath', values.picturePath.name);
+        formData.append('picturePath', values.picture.name);
 
         const savedUserResponse = await fetch(
             "http://localhost:3001/auth/register",
@@ -135,7 +135,7 @@ const Form = () => {
                             {({getRootProps, getInputProps}) => (
                                 <Box {...getRootProps()} border={`2px dashed ${palette.primary.main}`} padding="1rem" sx = {{"&:hover" : {cursor : "pointer"}}}>
                                     <Input {...getInputProps()} />
-                                    {!values.picturePath ? (<p>Add Pictures Here</p>) : (<FlexBetween><Typography>{values.picturePath.name}</Typography><EditOutlinedIcon /></FlexBetween>)}
+                                    {!values.picture ? (<p>Add Pictures Here</p>) : (<FlexBetween><Typography>{values.picture.name}</Typography><EditOutlinedIcon /></FlexBetween>)}
                                 </Box>
                             )}
                             </Dropzone>
