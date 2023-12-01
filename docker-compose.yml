@@ -4,6 +4,8 @@ services :
     image : krushikar/frontend_image:latest
     ports : 
       - '3000:3000'
+    depends_on : 
+      - backend
   backend : 
     image : krushikar/backend_image:latest
     ports :

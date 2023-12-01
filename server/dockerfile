@@ -1,8 +1,6 @@
 FROM node:18.13.0
-RUN npm install -g nodemon
 WORKDIR /
 COPY package*.json ./
-RUN npm install
 COPY . .
 EXPOSE 3001
-CMD ["nodemon", "start"]
+CMD ["npm", "start"]
